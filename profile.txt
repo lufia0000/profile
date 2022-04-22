@@ -1,0 +1,73 @@
+int i = 0;
+
+Start:
+Console.WriteLine("姓名:");
+    String name = Console.ReadLine();
+    
+    Console.WriteLine("性別:");
+    String sex = Console.ReadLine();
+
+    Console.WriteLine("出生年月日:");
+    String birth = Console.ReadLine();
+
+    Console.WriteLine("學號:");
+    String ID = Console.ReadLine();
+
+
+Result:
+Console.WriteLine("姓名:" + name);
+Console.WriteLine("性別:" + sex);
+Console.WriteLine("出生年月日:" + birth);
+Console.WriteLine("學號:" + ID);
+Console.WriteLine("請確認資料是否正確");
+Console.WriteLine("如果正確請輸入1;重新填寫請輸入2;指定填寫輸入3");
+string reply = Console.ReadLine();
+
+int R = Int32.Parse(reply);
+if (R == 1)
+{
+        goto End;
+}
+if (R == 2)
+{
+        Console.WriteLine("請重新開始基本資料填寫");
+        i = 0;
+        goto Start;
+}
+if (R == 3);
+{
+    Console.WriteLine("輸入1填寫姓名;輸入2填寫性別;輸入3填寫出生年月日;輸入4填寫學號");
+    string reply2 = Console.ReadLine();
+    i = Int32.Parse(reply2);
+    switch (i)
+    {
+        case 1:
+    Console.WriteLine("名字:");
+    name = Console.ReadLine();
+    goto Result;
+    break;
+
+    case 2:
+    Console.WriteLine("性別:");
+    sex = Console.ReadLine();
+    goto Result;
+    break;
+
+    case 3:
+    Console.WriteLine("出生年月日:");
+    birth = Console.ReadLine();
+    goto Result;
+    break;
+
+    case 4:
+    Console.WriteLine("學號:");
+    ID = Console.ReadLine();
+    goto Result;
+    break; 
+    }
+
+    
+}
+
+End:
+Console.WriteLine("已完成資料建置");
